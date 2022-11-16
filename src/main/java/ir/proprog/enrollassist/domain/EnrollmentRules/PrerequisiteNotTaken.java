@@ -4,7 +4,7 @@ import ir.proprog.enrollassist.domain.course.Course;
 
 import java.util.Objects;
 
-public class PrerequisiteNotTaken extends EnrollmentRuleViolation {
+    public class PrerequisiteNotTaken extends EnrollmentRuleViolation {
     private Course requestedCourse;
     private Course prerequisite;
 
