@@ -10,12 +10,13 @@ import ir.proprog.enrollassist.domain.section.Section;
 import ir.proprog.enrollassist.domain.student.Student;
 import ir.proprog.enrollassist.repository.*;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.Collections;
 import java.util.List;
 
-//@Component
+@Component
 @AllArgsConstructor
 public class DataInitializer {
     StudentRepository studentRepository;
@@ -55,26 +56,26 @@ public class DataInitializer {
         programRepository.saveAll(List.of(ceProgram, eeProgram));
 
 
-        Student mahsa = new Student("810199999", "Undergraduate")
-                .setGrade("11112", math1, 10)
-                .setGrade("11112", phys1, 12)
-                .setGrade("11112", prog, 16.3)
-                .setGrade("11112", farsi, 18.5)
-                .setGrade("11112", akhlagh, 15);
-        mahsa.addProgram(ceProgram);
-        studentRepository.save(mahsa);
-        Student changiz = new Student("810199998", "Undergraduate")
-                .setGrade("11112", math1, 13.2)
-                .setGrade("11112", phys1, 8.3)
-                .setGrade("11112", prog, 10.5)
-                .setGrade("11112", english, 11)
-                .setGrade("11112", akhlagh, 16);
-        changiz.addProgram(eeProgram);
-        studentRepository.save(changiz);
+//        Student mahsa = new Student("810199999", "Undergraduate")
+//                .setGrade("11112", math1, 10)
+//                .setGrade("11112", phys1, 12)
+//                .setGrade("11112", prog, 16.3)
+//                .setGrade("11112", farsi, 18.5)
+//                .setGrade("11112", akhlagh, 15);
+//        mahsa.addProgram(ceProgram);
+//        studentRepository.save(mahsa);
+//        Student changiz = new Student("810199998", "Undergraduate")
+//                .setGrade("11112", math1, 13.2)
+//                .setGrade("11112", phys1, 8.3)
+//                .setGrade("11112", prog, 10.5)
+//                .setGrade("11112", english, 11)
+//                .setGrade("11112", akhlagh, 16);
+//        changiz.addProgram(eeProgram);
+//        studentRepository.save(changiz);
 
-        ExamTime exam0 = new ExamTime("2021-07-10T09:00", "2021-07-10T11:00");
+        ExamTime exam0 = new ExamTime("2021-07-11T09:00", "2021-07-11T11:00");
         ExamTime exam1 = new ExamTime("2021-07-11T09:00", "2021-07-11T11:00");
-        ExamTime exam2 = new ExamTime("2021-07-12T09:00", "2021-07-12T11:00");
+        ExamTime exam2 = new ExamTime("2021-07-11T09:00", "2021-07-11T11:00");
         ExamTime exam3 = new ExamTime("2021-07-13T09:00", "2021-07-13T11:00");
         ExamTime exam4 = new ExamTime("2021-07-14T09:00", "2021-07-14T11:00");
         ExamTime exam5 = new ExamTime("2021-07-15T09:00", "2021-07-15T11:00");
@@ -93,13 +94,13 @@ public class DataInitializer {
         Section english_1 = new Section(english, "01", exam1, Collections.emptySet()); sectionRepository.save(english_1);
         // Section buggy = new Section(null, "01"); //sectionRepository.save(buggy);
 
-        EnrollmentList mahsaList = new EnrollmentList("Mahsa's List", mahsa);
-        mahsaList.addSections(math2_1, phys2_2, ap_1, dm_1);
-        enrollmentListRepository.save(mahsaList);
-
-        EnrollmentList changizList = new EnrollmentList("Changiz's List", changiz);
-        changizList.addSections(math2_1, phys1_1, ap_1, dm_1);
-        enrollmentListRepository.save(changizList);
+//        EnrollmentList mahsaList = new EnrollmentList("Mahsa's List", mahsa);
+//        mahsaList.addSections(math2_1, phys2_2, ap_1, dm_1);
+//        enrollmentListRepository.save(mahsaList);
+//
+//        EnrollmentList changizList = new EnrollmentList("Changiz's List", changiz);
+//        changizList.addSections(math2_1, phys1_1, ap_1, dm_1);
+//        enrollmentListRepository.save(changizList);
 
     }
 }
